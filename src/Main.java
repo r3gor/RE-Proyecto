@@ -3,9 +3,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import registradorcitas.AbogadoJefe;
-import registradorcitas.Administrador;
-import registradorcitas.Recepcionista;
 
 public class Main extends Application {
 
@@ -19,9 +16,12 @@ public class Main extends Application {
 
     public static void main(String[] args) throws Exception{
 
-//        Administrador.addAbogadoJefe(new AbogadoJefe("Roger", 123, 665, "Abogado Jefe", "llik"));
-//        Administrador.addRecepcionista(new Recepcionista("Say", 123, 149, "Recepcionista", "pwd"));
-
+        /*
+        Administrador.addAbogadoJefe(new AbogadoJefe("Roger", 123, 665, "Abogado Jefe", "llik"));
+        Administrador.addRecepcionista(new Recepcionista("Say", 123, 149, "Recepcionista", "pwd"));
+        Administrador.listaAbogJefes.printLista();
+        Administrador.listaRecepcionistas.printLista();
+        */
         launch(args);
     }
 }

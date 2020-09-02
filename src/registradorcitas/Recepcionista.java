@@ -1,33 +1,22 @@
 package registradorcitas;
 
-import java.util.ArrayList;
-
 public class Recepcionista extends Empleado {
-    ListaCitasOrdinarias listaCitasOrdinarias;
+    ListaPersistente<CitaOrdinaria> listaCitasOrdinarias = new ListaPersistente<>(ListaPersistente.CIT_ORD);
 
     public Recepcionista(String nombre, Integer DNI, Integer codigoEmpleado, String cargo, String pwd) {
         super(nombre, DNI, codigoEmpleado, cargo, pwd);
-        listaCitasOrdinarias = new ListaCitasOrdinarias("citas_ordinarias.dat");
     }
 
-    public void creaNuevaCita(CitaOrdinaria citaOrdinaria) throws Exception{
-        listaCitasOrdinarias.addCitaOrdinaria(citaOrdinaria);
+    public void addCitaOrd(CitaOrdinaria citaOrd) throws Exception {
+        listaCitasOrdinarias.add(citaOrd);
     }
 
-    public void editaCita(CitaOrdinaria c1, CitaOrdinaria c2) throws Exception{
-        listaCitasOrdinarias.replaceCitaOrdinaria(c1, c2);
+    public void deleteCitaOrd(CitaOrdinaria citaOrd) throws Exception {
+        listaCitasOrdinarias.delete(citaOrd);
     }
 
-    public void eliminarCita(CitaOrdinaria cita) throws Exception{
-        listaCitasOrdinarias.eliminarCitaOrdinaria(cita);
+    @Override
+    public String toString() {
+        return super.toString();
     }
-
-    public void printCitas(){ // only for debug
-        ArrayList<CitaOrdinaria> lista = listaCitasOrdinarias.getListaCitasOrdinarias();
-        for(CitaOrdinaria cita : lista){
-            System.out.println(cita);
-        }
-    }
-
-
 }

@@ -11,7 +11,18 @@ public abstract class Empleado implements Serializable {
     private String cargo;
     private String pwd;
 
-    public boolean correctPwd(String pwd){
+    @Override
+    public String toString() {
+        return "Empleado{" +
+                "nombre='" + nombre + '\'' +
+                ", DNI=" + DNI +
+                ", codigoEmpleado=" + codigoEmpleado +
+                ", cargo='" + cargo + '\'' +
+                ", pwd='" + pwd + '\'' +
+                '}';
+    }
+
+    public boolean correctPwd(String pwd) {
         return this.pwd.equals(pwd);
     }
 
