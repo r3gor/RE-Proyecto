@@ -3,6 +3,8 @@ package gui.controller;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.PasswordField;
@@ -10,6 +12,8 @@ import javafx.scene.control.TextField;
 import registradorcitas.AbogadoJefe;
 import registradorcitas.Administrador;
 import registradorcitas.Recepcionista;
+
+import java.io.IOException;
 
 public class ControllerView4 {
     public TextField tfNombre;
@@ -21,6 +25,7 @@ public class ControllerView4 {
 
     public Integer CARGO;
     public Button btnImpRegistrados;
+    public Button btnAtras;
 
     @FXML
     public void initialize() {
@@ -44,5 +49,10 @@ public class ControllerView4 {
     public void clickBtnImpRegistrados(ActionEvent actionEvent) throws Exception {
         Administrador.listaAbogJefes.printLista();
         Administrador.listaRecepcionistas.printLista();
+    }
+
+    public void clickBtnAtras(ActionEvent actionEvent) throws IOException {
+        Parent root = FXMLLoader.load(ControllerView1.class.getResource("/gui/view/View1.fxml"));
+        btnAtras.getScene().setRoot(root);
     }
 }

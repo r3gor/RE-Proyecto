@@ -2,34 +2,36 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-
 <AnchorPane prefHeight="264.0" prefWidth="526.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.ControllerView2">
    <children>
       <VBox alignment="CENTER" layoutX="95.0" layoutY="14.0" prefHeight="245.0" prefWidth="336.0">
          <children>
-            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="66.0" prefWidth="196.0" text="Ingresar al sistema" textAlignment="CENTER" />
-            <GridPane prefHeight="168.0" prefWidth="158.0">
-              <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-              </columnConstraints>
-              <rowConstraints>
-                <RowConstraints maxHeight="34.4" minHeight="10.0" prefHeight="32.4" vgrow="SOMETIMES" />
-                <RowConstraints maxHeight="56.4" minHeight="10.0" prefHeight="44.0" vgrow="SOMETIMES" />
-                <RowConstraints maxHeight="56.39999999999999" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="68.8" minHeight="10.0" prefHeight="52.8" vgrow="SOMETIMES" />
-              </rowConstraints>
-               <children>
-                  <Label prefHeight="18.0" prefWidth="98.0" text="Cargo" />
-                  <Label prefHeight="18.0" prefWidth="105.0" text="Código" GridPane.rowIndex="1" />
-                  <Label text="Password" GridPane.rowIndex="2" />
-                  <TextField fx:id="etCodigo" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <Button fx:id="btnSiguiente" mnemonicParsing="false" onAction="#clickBtnSgte" text="Siguiente" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
-                  <Button mnemonicParsing="false" text="Atras" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
-                  <PasswordField fx:id="etPwd" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <ChoiceBox fx:id="choiseBoxCargo" prefWidth="150.0" GridPane.columnIndex="1" />
-               </children>
-            </GridPane>
+             <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="66.0" prefWidth="196.0"
+                    text="Ingresar al sistema" textAlignment="CENTER"/>
+             <GridPane prefHeight="168.0" prefWidth="158.0">
+                 <columnConstraints>
+                     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                 </columnConstraints>
+                 <rowConstraints>
+                     <RowConstraints maxHeight="34.4" minHeight="10.0" prefHeight="32.4" vgrow="SOMETIMES"/>
+                     <RowConstraints maxHeight="56.4" minHeight="10.0" prefHeight="44.0" vgrow="SOMETIMES"/>
+                     <RowConstraints maxHeight="56.39999999999999" minHeight="10.0" prefHeight="40.0"
+                                     vgrow="SOMETIMES"/>
+                     <RowConstraints maxHeight="68.8" minHeight="10.0" prefHeight="52.8" vgrow="SOMETIMES"/>
+                 </rowConstraints>
+                 <Label prefHeight="18.0" prefWidth="98.0" text="Cargo"/>
+                 <Label prefHeight="18.0" prefWidth="105.0" text="Código" GridPane.rowIndex="1"/>
+                 <Label text="Password" GridPane.rowIndex="2"/>
+                 <TextField fx:id="etCodigo" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                 <Button fx:id="btnSiguiente" mnemonicParsing="false" onAction="#clickBtnSgte" text="Siguiente"
+                         GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3"
+                         GridPane.valignment="CENTER"/>
+                 <Button fx:id="btnAtras" mnemonicParsing="false" onAction="#clickBtnAtras" text="Atras"
+                         GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER"/>
+                 <PasswordField fx:id="etPwd" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                 <ChoiceBox fx:id="choiseBoxCargo" prefWidth="150.0" GridPane.columnIndex="1"/>
+             </GridPane>
          </children></VBox>
    </children>
 </AnchorPane>

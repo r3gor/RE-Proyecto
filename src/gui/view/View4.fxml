@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<AnchorPane prefHeight="476.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171"
+<AnchorPane prefHeight="476.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal"
             xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.ControllerView4">
     <VBox alignment="CENTER" layoutX="97.0" layoutY="26.0" prefHeight="395.0" prefWidth="406.0" spacing="30.0">
         <Label text="Registrar usuario"/>
@@ -19,22 +18,21 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
             </rowConstraints>
-            <children>
-                <Label text="Nombre"/>
-                <Label text="DNI" GridPane.rowIndex="1"/>
-                <Label text="Codigo" GridPane.rowIndex="2"/>
-                <Label text="Cargo" GridPane.rowIndex="3"/>
-                <Label text="Contraseña" GridPane.rowIndex="4"/>
-                <TextField fx:id="tfNombre" GridPane.columnIndex="1"/>
-                <TextField fx:id="tfDNI" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
-                <TextField fx:id="tfCdigo" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
-                <PasswordField fx:id="pfPwd" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
-                <ChoiceBox fx:id="cbCargo" prefHeight="31.0" prefWidth="261.0" GridPane.columnIndex="1"
-                           GridPane.rowIndex="3"/>
-            </children>
+            <Label text="Nombre"/>
+            <Label text="DNI" GridPane.rowIndex="1"/>
+            <Label text="Codigo" GridPane.rowIndex="2"/>
+            <Label text="Cargo" GridPane.rowIndex="3"/>
+            <Label text="Contraseña" GridPane.rowIndex="4"/>
+            <TextField fx:id="tfNombre" GridPane.columnIndex="1"/>
+            <TextField fx:id="tfDNI" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+            <TextField fx:id="tfCdigo" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+            <PasswordField fx:id="pfPwd" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+            <ChoiceBox fx:id="cbCargo" prefHeight="31.0" prefWidth="261.0" GridPane.columnIndex="1"
+                       GridPane.rowIndex="3"/>
         </GridPane>
         <Button fx:id="btnRegistrar" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false"
                 onAction="#clickBtnRegistrar" text="Registrar"/>
+        <Button fx:id="btnAtras" mnemonicParsing="false" onAction="#clickBtnAtras" text="Atras"/>
         <Button fx:id="btnImpRegistrados" mnemonicParsing="false" onAction="#clickBtnImpRegistrados"
                 text="Imprime registrados"/>
     </VBox>

@@ -1,15 +1,17 @@
 package gui.controller;
 
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import registradorcitas.Administrador;
+
+import java.io.IOException;
 
 public class ControllerView2 {
     public ChoiceBox choiseBoxCargo;
@@ -19,6 +21,7 @@ public class ControllerView2 {
     public Button btnSiguiente;
     public TextField etCodigo;
     public PasswordField etPwd;
+    public Button btnAtras;
 
     @FXML
     public void initialize() {
@@ -32,10 +35,15 @@ public class ControllerView2 {
         System.out.println("Codigo: " + codigo);
         System.out.println("Pwd: " + password);
         System.out.println("Cargo: " + CARGO);
-        if (Administrador.validLogin(codigo, password, CARGO)){
+        if (Administrador.validLogin(codigo, password, CARGO)) {
             System.out.println("Login valido");
         } else {
             System.out.println("Login invalido");
         }
+    }
+
+    public void clickBtnAtras(ActionEvent actionEvent) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/gui/view/View1.fxml"));
+        btnAtras.getScene().setRoot(root);
     }
 }

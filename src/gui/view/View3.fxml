@@ -5,15 +5,15 @@
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
-
-
-<AnchorPane prefHeight="295.0" prefWidth="434.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.ControllerView3">
+<AnchorPane prefHeight="295.0" prefWidth="582.0" xmlns="http://javafx.com/javafx/10.0.2-internal"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.ControllerView3">
    <children>
-      <VBox alignment="CENTER" layoutX="117.0" layoutY="56.0" prefHeight="117.0" prefWidth="200.0" spacing="50.0">
+      <VBox alignment="CENTER" layoutX="191.0" layoutY="55.0" prefHeight="117.0" prefWidth="200.0" spacing="30.0">
          <children>
-            <Label text="Contraseña de administrador" />
-            <PasswordField fx:id="pfPwd" />
-            <Button fx:id="btnContinuar" mnemonicParsing="false" onAction="#clickBtnContinuar" text="Continuar" />
+            <Label text="Contraseña de administrador"/>
+            <PasswordField fx:id="pfPwd"/>
+            <Button fx:id="btnContinuar" mnemonicParsing="false" onAction="#clickBtnContinuar" text="Continuar"/>
+            <Button fx:id="btnAtras" mnemonicParsing="false" onAction="#clickBtnAtras" text="Atras"/>
          </children>
       </VBox>
    </children>

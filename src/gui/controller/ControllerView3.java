@@ -15,6 +15,7 @@ import java.io.IOException;
 public class ControllerView3 {
     public PasswordField pfPwd;
     public Button btnContinuar;
+    public Button btnAtras;
 
     public void clickBtnContinuar(ActionEvent actionEvent) throws IOException {
         if (Administrador.validLoginAdm(pfPwd.getText())) {
@@ -28,5 +29,10 @@ public class ControllerView3 {
         } else {
             System.out.println("Adm. pwd incorrecta");
         }
+    }
+
+    public void clickBtnAtras(ActionEvent actionEvent) throws IOException {
+        Parent root = FXMLLoader.load(ControllerView1.class.getResource("/gui/view/View1.fxml"));
+        btnAtras.getScene().setRoot(root);
     }
 }
