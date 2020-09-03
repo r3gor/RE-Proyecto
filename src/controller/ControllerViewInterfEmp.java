@@ -1,8 +1,17 @@
 package controller;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.stage.Stage;
+import model.CitaOrdinaria;
+import model.ListaPersistente;
+
+import java.io.IOException;
 
 public class ControllerViewInterfEmp {
     public Button btnRegistrarCita;
@@ -10,13 +19,28 @@ public class ControllerViewInterfEmp {
     public Button btnCerrarSesion;
     public Label lblInfoUser;
 
-    public void clickBtnCerrarSesion(ActionEvent actionEvent) {
+    public static Stage stageMostrarCitas;
 
+    @FXML
+    public void initialize() {
+        lblInfoUser.setText("Cargo: " + ControllerView2.cargoEmpLogeado);
     }
 
-    public void clickBtnMostrarCitas(ActionEvent actionEvent) {
+    public void clickBtnCerrarSesion(ActionEvent actionEvent) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/view/View2.fxml"));
+        btnCerrarSesion.getScene().setRoot(root);
     }
 
-    public void clickBtnRegistrarCita(ActionEvent actionEvent) {
+    public void clickBtnMostrarCitas(ActionEvent actionEvent) throws Exception {
+        ListaPersistente<CitaOrdinaria> listaCitasOrdinarias = new ListaPersistente<>(ListaPersistente.CIT_ORD);
+        listaCitasOrdinarias.printLista();
+    }
+
+    public void clickBtnRegistrarCita(ActionEvent actionEvent) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/view/ViewRegistrarCita.fxml"));
+        stageMostrarCitas = new Stage();
+        stageMostrarCitas.setTitle("Crear cita ordinaria");
+        stageMostrarCitas.setScene(new Scene(root));
+        stageMostrarCitas.show();
     }
 }

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="395.0"
+          prefWidth="628.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="controller.CtrlRegistrarCita">
+    <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="400.0" minWidth="10.0" prefWidth="305.0"/>
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="195.0" minWidth="0.0" prefWidth="95.0"/>
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints maxHeight="125.0" minHeight="10.0" prefHeight="75.0" vgrow="SOMETIMES"/>
+        <RowConstraints maxHeight="400.0" minHeight="10.0" prefHeight="238.0" vgrow="SOMETIMES"/>
+        <RowConstraints maxHeight="307.0" minHeight="0.0" prefHeight="82.0" vgrow="SOMETIMES"/>
+    </rowConstraints>
+    <GridPane alignment="CENTER" hgap="10.0" prefHeight="362.0" prefWidth="322.0" vgap="10.0" GridPane.columnIndex="1"
+              GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES"/>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES"/>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES"/>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES"/>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES"/>
+        </rowConstraints>
+        <children>
+            <Label text="DNI del cliente" GridPane.rowIndex="1"/>
+            <Label text="Nombre del cliente"/>
+            <Label text="Celular del cliente" GridPane.rowIndex="2"/>
+            <Label text="Fecha de la cita" GridPane.rowIndex="3"/>
+            <Label text="Abogado asistente" GridPane.rowIndex="4"/>
+            <TextField fx:id="tfNombreCl" GridPane.columnIndex="1"/>
+            <TextField fx:id="tfDNICl" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+            <TextField fx:id="tfCelCl" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+            <TextField fx:id="tfAbogAsis" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+            <DatePicker fx:id="dpFecha" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+        </children>
+        <GridPane.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+        </GridPane.margin>
+    </GridPane>
+    <Label alignment="CENTER" contentDisplay="CENTER" text="Nueva cita ordinaria" textAlignment="CENTER"
+           GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
+    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="40.0" GridPane.columnIndex="1"
+          GridPane.rowIndex="2">
+        <Button fx:id="btnRegistrar" mnemonicParsing="false" onAction="#clickBtnRegistrar" text="Registrar cita"/>
+        <Button fx:id="btnCancelar" mnemonicParsing="false" onAction="#clickBtnCancelar" text="Cancelar"
+                textAlignment="CENTER"/>
+    </HBox>
+</GridPane>

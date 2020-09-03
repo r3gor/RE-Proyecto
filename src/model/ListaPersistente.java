@@ -4,31 +4,16 @@ import java.io.*;
 import java.util.ArrayList;
 
 public class ListaPersistente<T extends Serializable> implements Serializable {
-    final String CIT_ORD_FILE = "dat/citas_ordinarias.dat";
-    final String CIT_CAS_FILE = "dat/citas_caso.dat";
-    final String ABO_JEF_FILE = "dat/abog_jefe.dat";
-    final String RECEP_FILE = "dat/recepcionistas.dat";
+    public static final int CIT_ORD = 0;
+    public static final int CIT_CAS = 1;
+    public static final int ABO_JEF = 2;
+    public static final int RECEP = 3;
+    public static final String[] FILES = {"dat/citas_ordinarias.dat", "dat/citas_caso.dat", "dat/abog_jefe.dat", "dat/recepcionistas.dat"};
     String file = "";
     ArrayList<T> lista = new ArrayList<>();
 
-    static final int CIT_ORD = 0;
-    static final int CIT_CAS = 1;
-    static final int ABO_JEF = 2;
-    static final int RECEP = 3;
-
     public ListaPersistente(int type) {
-        if (type == CIT_ORD) {
-            file = CIT_ORD_FILE;
-        }
-        if (type == CIT_CAS) {
-            file = CIT_CAS_FILE;
-        }
-        if (type == ABO_JEF) {
-            file = ABO_JEF_FILE;
-        }
-        if (type == RECEP) {
-            file = RECEP_FILE;
-        }
+        file = FILES[type];
     }
 
     public void add(T elemento) throws Exception {
