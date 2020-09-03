@@ -22,6 +22,9 @@ public class ControllerView2 {
     public TextField etCodigo;
     public PasswordField etPwd;
     public Button btnAtras;
+    static String cargoEmpLogeado;
+
+    private String CARGOS[] = {"Abogado Jefe", "Recepcionista"};
 
     @FXML
     public void initialize() {
@@ -36,6 +39,7 @@ public class ControllerView2 {
         System.out.println("Pwd: " + password);
         System.out.println("Cargo: " + CARGO);
         if (Administrador.validLogin(codigo, password, CARGO)) {
+            cargoEmpLogeado = CARGOS[CARGO];
             System.out.println("Login valido");
             Parent root = FXMLLoader.load(getClass().getResource("/view/ViewInterfEmp.fxml"));
             btnSiguiente.getScene().setRoot(root);
