@@ -1,4 +1,4 @@
-package gui.controller;
+package controller;
 
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
@@ -11,9 +11,9 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import registradorcitas.AbogadoJefe;
-import registradorcitas.Administrador;
-import registradorcitas.Recepcionista;
+import model.AbogadoJefe;
+import model.Administrador;
+import model.Recepcionista;
 
 import java.io.IOException;
 
@@ -53,14 +53,14 @@ public class ControllerView4 {
         Administrador.listaRecepcionistas.printLista();
 
         Stage primaryStage = new Stage();
-        Parent root = FXMLLoader.load(ControllerView1.class.getResource("/gui/view/ViewMuestraUsuarios.fxml"));
+        Parent root = FXMLLoader.load(ControllerView1.class.getResource("/view/ViewMuestraUsuarios.fxml"));
         primaryStage.setTitle("Usuarios registrados");
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
     }
 
     public void clickBtnAtras(ActionEvent actionEvent) throws IOException {
-        Parent root = FXMLLoader.load(ControllerView1.class.getResource("/gui/view/View1.fxml"));
+        Parent root = FXMLLoader.load(ControllerView1.class.getResource("/view/View1.fxml"));
         btnAtras.getScene().setRoot(root);
     }
 }

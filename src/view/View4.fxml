@@ -3,7 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <AnchorPane prefHeight="476.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.ControllerView4">
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ControllerView4">
     <VBox alignment="CENTER" layoutX="97.0" layoutY="26.0" prefHeight="395.0" prefWidth="406.0" spacing="30.0">
         <Label text="Registrar usuario"/>
         <GridPane prefHeight="278.0" prefWidth="375.0">

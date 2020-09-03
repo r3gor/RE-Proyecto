@@ -1,4 +1,4 @@
-package registradorcitas;
+package model;
 
 public class Recepcionista extends Empleado {
     ListaPersistente<CitaOrdinaria> listaCitasOrdinarias = new ListaPersistente<>(ListaPersistente.CIT_ORD);

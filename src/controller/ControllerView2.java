@@ -1,4 +1,4 @@
-package gui.controller;
+package controller;
 
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
@@ -9,7 +9,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import registradorcitas.Administrador;
+import model.Administrador;
 
 import java.io.IOException;
 
@@ -43,7 +43,7 @@ public class ControllerView2 {
     }
 
     public void clickBtnAtras(ActionEvent actionEvent) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/gui/view/View1.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/view/View1.fxml"));
         btnAtras.getScene().setRoot(root);
     }
 }

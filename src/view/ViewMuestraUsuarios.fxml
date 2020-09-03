@@ -4,7 +4,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <GridPane prefHeight="542.0" prefWidth="759.0" xmlns="http://javafx.com/javafx/8.0.171"
-          xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.ControllerMuestraUsuarios">
+          xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ControllerMuestraUsuarios">
    <columnConstraints>
       <ColumnConstraints hgrow="SOMETIMES" maxWidth="179.0" minWidth="10.0" prefWidth="122.0"/>
       <ColumnConstraints hgrow="SOMETIMES" maxWidth="636.0" minWidth="10.0" prefWidth="526.0"/>

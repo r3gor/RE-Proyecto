@@ -14,7 +14,7 @@ public class Main extends Application {
     }
 
     public void loadView1(Stage primaryStage) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/gui/view/View1.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/view/View1.fxml"));
         primaryStage.setTitle("Organizador de Citas - LegalFirm");
         primaryStage.setScene(new Scene(root));
         primaryStage.show();

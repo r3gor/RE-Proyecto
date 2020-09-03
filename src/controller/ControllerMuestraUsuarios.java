@@ -1,11 +1,11 @@
-package gui.controller;
+package controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import registradorcitas.Administrador;
-import registradorcitas.Empleado;
+import model.Administrador;
+import model.Empleado;
 
 import java.util.ArrayList;
 

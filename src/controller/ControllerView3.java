@@ -1,4 +1,4 @@
-package gui.controller;
+package controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -8,7 +8,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.stage.Stage;
-import registradorcitas.Administrador;
+import model.Administrador;
 
 import java.io.IOException;
 
@@ -21,7 +21,7 @@ public class ControllerView3 {
         if (Administrador.validLoginAdm(pfPwd.getText())) {
             System.out.println("Adm logeado!");
             Stage primaryStage = new Stage();
-            Parent root = FXMLLoader.load(ControllerView1.class.getResource("/gui/view/View4.fxml"));
+            Parent root = FXMLLoader.load(ControllerView1.class.getResource("/view/View4.fxml"));
             primaryStage.setTitle("View 4 - Registrar");
             primaryStage.setScene(new Scene(root));
             primaryStage.show();
@@ -32,7 +32,7 @@ public class ControllerView3 {
     }
 
     public void clickBtnAtras(ActionEvent actionEvent) throws IOException {
-        Parent root = FXMLLoader.load(ControllerView1.class.getResource("/gui/view/View1.fxml"));
+        Parent root = FXMLLoader.load(ControllerView1.class.getResource("/view/View1.fxml"));
         btnAtras.getScene().setRoot(root);
     }
 }
