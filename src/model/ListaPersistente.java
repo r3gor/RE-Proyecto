@@ -4,10 +4,10 @@ import java.io.*;
 import java.util.ArrayList;
 
 public class ListaPersistente<T extends Serializable> implements Serializable {
-    final String CIT_ORD_FILE = "citas_ordinarias.dat";
-    final String CIT_CAS_FILE = "citas_caso.dat";
-    final String ABO_JEF_FILE = "abog_jefe.dat";
-    final String RECEP_FILE = "recepcionistas.dat";
+    final String CIT_ORD_FILE = "dat/citas_ordinarias.dat";
+    final String CIT_CAS_FILE = "dat/citas_caso.dat";
+    final String ABO_JEF_FILE = "dat/abog_jefe.dat";
+    final String RECEP_FILE = "dat/recepcionistas.dat";
     String file = "";
     ArrayList<T> lista = new ArrayList<>();
 

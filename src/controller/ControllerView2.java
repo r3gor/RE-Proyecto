@@ -37,6 +37,8 @@ public class ControllerView2 {
         System.out.println("Cargo: " + CARGO);
         if (Administrador.validLogin(codigo, password, CARGO)) {
             System.out.println("Login valido");
+            Parent root = FXMLLoader.load(getClass().getResource("/view/ViewInterfEmp.fxml"));
+            btnSiguiente.getScene().setRoot(root);
         } else {
             System.out.println("Login invalido");
         }
