@@ -32,8 +32,8 @@
         </GridPane>
         <Button fx:id="btnRegistrar" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false"
                 onAction="#clickBtnRegistrar" text="Registrar"/>
-        <Button fx:id="btnAtras" mnemonicParsing="false" onAction="#clickBtnAtras" text="Atras"/>
         <Button fx:id="btnImpRegistrados" mnemonicParsing="false" onAction="#clickBtnImpRegistrados"
-                text="Imprime registrados"/>
+                text="Mostrar registrados"/>
+        <Button fx:id="btnAtras" mnemonicParsing="false" onAction="#clickBtnAtras" text="Atras"/>
     </VBox>
 </AnchorPane>

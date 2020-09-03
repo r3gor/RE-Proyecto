@@ -1,5 +1,7 @@
 package registradorcitas;
 
+import java.util.ArrayList;
+
 public class Administrador {
     public static final int RECEP = 1;
     public static final int ABOG_JEF = 0;
@@ -43,11 +45,24 @@ public class Administrador {
         return false;
     }
 
-    public static void addAbogadoJefe(AbogadoJefe abog) throws Exception{
+    public static void addAbogadoJefe(AbogadoJefe abog) throws Exception {
         listaAbogJefes.add(abog);
     }
 
-    public static void addRecepcionista(Recepcionista recep) throws Exception{
+    public static void addRecepcionista(Recepcionista recep) throws Exception {
         listaRecepcionistas.add(recep);
+    }
+
+    public static ArrayList<Empleado> getEmpleados() throws Exception {
+        ArrayList<Empleado> listaEmp = new ArrayList<>();
+        ArrayList<AbogadoJefe> listAbogJef = listaAbogJefes.getLista();
+        for (AbogadoJefe o : listAbogJef) {
+            listaEmp.add(new Empleado(o.getNombre(), o.getDNI(), o.getCodigoEmpleado(), o.getCargo(), o.getPwd()));
+        }
+        ArrayList<Recepcionista> listRecep = listaRecepcionistas.getLista();
+        for (Recepcionista o : listRecep) {
+            listaEmp.add(new Empleado(o.getNombre(), o.getDNI(), o.getCodigoEmpleado(), o.getCargo(), o.getPwd()));
+        }
+        return listaEmp;
     }
 }

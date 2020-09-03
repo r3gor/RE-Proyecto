@@ -3,7 +3,7 @@ package registradorcitas;
 
 import java.io.Serializable;
 
-public abstract class Empleado implements Serializable {
+public class Empleado implements Serializable {
 
     private String nombre;
     private Integer DNI;
@@ -48,6 +48,10 @@ public abstract class Empleado implements Serializable {
 
     public String getCargo() {
         return cargo;
+    }
+
+    public String getPwd() {
+        return pwd;
     }
 
     public void setNombre(String nombre) {

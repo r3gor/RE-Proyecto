@@ -5,10 +5,12 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 import registradorcitas.AbogadoJefe;
 import registradorcitas.Administrador;
 import registradorcitas.Recepcionista;
@@ -49,6 +51,12 @@ public class ControllerView4 {
     public void clickBtnImpRegistrados(ActionEvent actionEvent) throws Exception {
         Administrador.listaAbogJefes.printLista();
         Administrador.listaRecepcionistas.printLista();
+
+        Stage primaryStage = new Stage();
+        Parent root = FXMLLoader.load(ControllerView1.class.getResource("/gui/view/ViewMuestraUsuarios.fxml"));
+        primaryStage.setTitle("Usuarios registrados");
+        primaryStage.setScene(new Scene(root));
+        primaryStage.show();
     }
 
     public void clickBtnAtras(ActionEvent actionEvent) throws IOException {
