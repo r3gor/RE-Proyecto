@@ -13,7 +13,7 @@ import model.Administrador;
 
 import java.io.IOException;
 
-public class ControllerView2 {
+public class CtrlLogin {
     public ChoiceBox choiseBoxCargo;
     public int CARGO;
     public int codigo;
@@ -41,7 +41,7 @@ public class ControllerView2 {
         if (Administrador.validLogin(codigo, password, CARGO)) {
             cargoEmpLogeado = CARGOS[CARGO];
             System.out.println("Login valido");
-            Parent root = FXMLLoader.load(getClass().getResource("/view/ViewInterfEmp.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/view/InterfUser.fxml"));
             btnSiguiente.getScene().setRoot(root);
         } else {
             System.out.println("Login invalido");
@@ -49,7 +49,7 @@ public class ControllerView2 {
     }
 
     public void clickBtnAtras(ActionEvent actionEvent) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/view/View1.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/view/InitWin.fxml"));
         btnAtras.getScene().setRoot(root);
     }
 }

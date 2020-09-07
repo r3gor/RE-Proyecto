@@ -13,7 +13,7 @@ import model.ListaPersistente;
 
 import java.io.IOException;
 
-public class ControllerViewInterfEmp {
+public class CtrlInterfUser {
     public Button btnRegistrarCita;
     public Button btnMostrarCitas;
     public Button btnCerrarSesion;
@@ -23,11 +23,11 @@ public class ControllerViewInterfEmp {
 
     @FXML
     public void initialize() {
-        lblInfoUser.setText("Cargo: " + ControllerView2.cargoEmpLogeado);
+        lblInfoUser.setText("Cargo: " + CtrlLogin.cargoEmpLogeado);
     }
 
     public void clickBtnCerrarSesion(ActionEvent actionEvent) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/view/View2.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/view/Login.fxml"));
         btnCerrarSesion.getScene().setRoot(root);
     }
 
@@ -37,7 +37,7 @@ public class ControllerViewInterfEmp {
     }
 
     public void clickBtnRegistrarCita(ActionEvent actionEvent) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/view/ViewRegistrarCita.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/view/RegisCitaOrd.fxml"));
         stageMostrarCitas = new Stage();
         stageMostrarCitas.setTitle("Crear cita ordinaria");
         stageMostrarCitas.setScene(new Scene(root));

@@ -7,7 +7,7 @@ import javafx.scene.control.TextField;
 import model.CitaOrdinaria;
 import model.ListaPersistente;
 
-public class CtrlRegistrarCita {
+public class CtrlRegisCitaOrd {
     public TextField tfNombreCl;
     public TextField tfDNICl;
     public TextField tfCelCl;
@@ -17,7 +17,7 @@ public class CtrlRegistrarCita {
     public DatePicker dpFecha;
 
     public void clickBtnCancelar(ActionEvent actionEvent) {
-        ControllerViewInterfEmp.stageMostrarCitas.close();
+        CtrlInterfUser.stageMostrarCitas.close();
     }
 
     public void clickBtnRegistrar(ActionEvent actionEvent) throws Exception {

@@ -17,7 +17,7 @@ import model.Recepcionista;
 
 import java.io.IOException;
 
-public class ControllerView4 {
+public class CtrlRegisUser {
     public TextField tfNombre;
     public TextField tfDNI;
     public TextField tfCdigo;
@@ -53,14 +53,14 @@ public class ControllerView4 {
         Administrador.listaRecepcionistas.printLista();
 
         Stage primaryStage = new Stage();
-        Parent root = FXMLLoader.load(ControllerView1.class.getResource("/view/ViewMuestraUsuarios.fxml"));
+        Parent root = FXMLLoader.load(CtrlInitWin.class.getResource("/view/ShowUsers.fxml"));
         primaryStage.setTitle("Usuarios registrados");
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
     }
 
     public void clickBtnAtras(ActionEvent actionEvent) throws IOException {
-        Parent root = FXMLLoader.load(ControllerView1.class.getResource("/view/View1.fxml"));
+        Parent root = FXMLLoader.load(CtrlInitWin.class.getResource("/view/InitWin.fxml"));
         btnAtras.getScene().setRoot(root);
     }
 }

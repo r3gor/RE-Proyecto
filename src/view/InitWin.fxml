@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
 <GridPane alignment="CENTER" prefHeight="318.0" prefWidth="573.0" xmlns="http://javafx.com/javafx/10.0.2-internal"
-          xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ControllerView1">
+          xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CtrlInitWin">
     <columnConstraints>
         <ColumnConstraints hgrow="SOMETIMES" maxWidth="217.0" minWidth="10.0" prefWidth="153.0"/>
         <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="366.0" minWidth="10.0" prefWidth="255.0"/>

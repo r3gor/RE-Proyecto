@@ -12,7 +12,7 @@ import model.Administrador;
 
 import java.io.IOException;
 
-public class ControllerView3 {
+public class CtrlLoginAdm {
     public PasswordField pfPwd;
     public Button btnContinuar;
     public Button btnAtras;
@@ -21,7 +21,7 @@ public class ControllerView3 {
         if (Administrador.validLoginAdm(pfPwd.getText())) {
             System.out.println("Adm logeado!");
             Stage primaryStage = new Stage();
-            Parent root = FXMLLoader.load(ControllerView1.class.getResource("/view/View4.fxml"));
+            Parent root = FXMLLoader.load(CtrlInitWin.class.getResource("/view/RegisUser.fxml"));
             primaryStage.setTitle("View 4 - Registrar");
             primaryStage.setScene(new Scene(root));
             primaryStage.show();
@@ -32,7 +32,7 @@ public class ControllerView3 {
     }
 
     public void clickBtnAtras(ActionEvent actionEvent) throws IOException {
-        Parent root = FXMLLoader.load(ControllerView1.class.getResource("/view/View1.fxml"));
+        Parent root = FXMLLoader.load(CtrlInitWin.class.getResource("/view/InitWin.fxml"));
         btnAtras.getScene().setRoot(root);
     }
 }

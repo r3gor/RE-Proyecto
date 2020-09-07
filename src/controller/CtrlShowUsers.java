@@ -9,7 +9,7 @@ import model.Empleado;
 
 import java.util.ArrayList;
 
-public class ControllerMuestraUsuarios {
+public class CtrlShowUsers {
     public TableView<Empleado> tvEmpleados;
     public TableColumn<String, Empleado> cNombre;
     public TableColumn<Integer, Empleado> cDNI;
