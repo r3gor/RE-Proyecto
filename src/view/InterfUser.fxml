@@ -30,10 +30,11 @@
         </Label>
         <Button fx:id="btnRegistrarCita" mnemonicParsing="false" onAction="#clickBtnRegistrarCita"
                 text="Registrar Cita"/>
-        <Button fx:id="btnMostrarCitas" mnemonicParsing="false" onAction="#clickBtnMostrarCitas"
-                text="Mostrar Citas"/>
-        <Button fx:id="btnCerrarSesion" mnemonicParsing="false" onAction="#clickBtnCerrarSesion"
-                text="Cerrar sesión"/>
+        <Button fx:id="btnMostrarCitasOrd" mnemonicParsing="false" onAction="#clickBtnMostrarCitasOrd"
+                text="Mostrar Citas Ord."/>
+        <Button fx:id="btnMostrarCitasCaso" mnemonicParsing="false" onAction="#clickBtnMostrarCitasCaso"
+                text="Mostrar Citas Caso"/>
+        <Button fx:id="btnCerrarSesion" mnemonicParsing="false" onAction="#clickBtnCerrarSesion" text="Cerrar sesión"/>
     </VBox>
     <Label text="LegalFirm" textAlignment="CENTER" textOverrun="CLIP" GridPane.columnIndex="1"
            GridPane.halignment="CENTER" GridPane.valignment="CENTER">

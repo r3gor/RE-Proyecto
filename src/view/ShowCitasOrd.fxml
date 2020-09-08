@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="544.0"
+          prefWidth="706.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="controller.CtrlShowCitasOrd">
+    <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="295.0" minWidth="10.0" prefWidth="174.0"/>
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="428.0" minWidth="10.0" prefWidth="428.0"/>
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="605.0" minWidth="10.0" prefWidth="162.0"/>
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints maxHeight="436.0" minHeight="10.0" prefHeight="129.0" vgrow="SOMETIMES"/>
+        <RowConstraints maxHeight="436.0" minHeight="10.0" prefHeight="405.0" vgrow="SOMETIMES"/>
+        <RowConstraints maxHeight="265.0" minHeight="10.0" prefHeight="108.0" vgrow="SOMETIMES"/>
+    </rowConstraints>
+    <TableView fx:id="tvCitasOrd" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+        <columns>
+            <TableColumn fx:id="tcNombre" prefWidth="75.0" text="Nombre Cliente"/>
+            <TableColumn fx:id="tcDNI" prefWidth="75.0" text="DNI"/>
+            <TableColumn fx:id="tcCelular" prefWidth="75.0" text="Celular"/>
+            <TableColumn fx:id="tcFecha" prefWidth="75.0" text="Fecha Cita"/>
+            <TableColumn fx:id="tcAbogAsis" prefWidth="75.0" text="Abog Asist."/>
+        </columns>
+    </TableView>
+</GridPane>

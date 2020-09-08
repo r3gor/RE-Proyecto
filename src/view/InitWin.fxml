@@ -28,7 +28,8 @@
               GridPane.rowIndex="2">
             <children>
                 <Button fx:id="BtnIngresar" mnemonicParsing="false" onAction="#clickBtnIngresar" text="Ingresar"/>
-                <Button fx:id="BtnRegistrar" mnemonicParsing="false" onAction="#clickBtnRegistrar" text="Registrar"/>
+                <Button fx:id="BtnRegistrar" mnemonicParsing="false" onAction="#clickBtnRegistrar"
+                        text="Registrar usuario"/>
             </children>
             <effect>
                 <Blend/>

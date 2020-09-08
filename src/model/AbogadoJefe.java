@@ -30,6 +30,10 @@ public class AbogadoJefe extends Empleado implements Serializable {
         listaCitasCaso.delete(citaCaso);
     }
 
+    static public ArrayList<CitaCaso> getListaCitasCaso() throws Exception {
+        return listaCitasCaso.getLista();
+    }
+
     @Override
     public String toString() {
         return super.toString();

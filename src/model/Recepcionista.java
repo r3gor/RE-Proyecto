@@ -1,18 +1,24 @@
 package model;
 
+import java.util.ArrayList;
+
 public class Recepcionista extends Empleado {
-    ListaPersistente<CitaOrdinaria> listaCitasOrdinarias = new ListaPersistente<>(ListaPersistente.CIT_ORD);
+    private static ListaPersistente<CitaOrdinaria> listaCitasOrdinarias = new ListaPersistente<>(ListaPersistente.CIT_ORD);
 
     public Recepcionista(String nombre, Integer DNI, Integer codigoEmpleado, Cargo cargo, String pwd) {
         super(nombre, DNI, codigoEmpleado, cargo, pwd);
     }
 
-    public void addCitaOrd(CitaOrdinaria citaOrd) throws Exception {
+    static public void addCitaOrd(CitaOrdinaria citaOrd) throws Exception {
         listaCitasOrdinarias.add(citaOrd);
     }
 
-    public void deleteCitaOrd(CitaOrdinaria citaOrd) throws Exception {
+    static public void deleteCitaOrd(CitaOrdinaria citaOrd) throws Exception {
         listaCitasOrdinarias.delete(citaOrd);
+    }
+
+    static public ArrayList<CitaOrdinaria> getListaCitasOrd() throws Exception {
+        return listaCitasOrdinarias.getLista();
     }
 
     @Override

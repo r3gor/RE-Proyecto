@@ -10,22 +10,24 @@ import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import model.Administrador;
 import model.Cargo;
-import model.CitaOrdinaria;
-import model.ListaPersistente;
 
 import java.io.IOException;
 
 public class CtrlInterfUser {
     public Button btnRegistrarCita;
-    public Button btnMostrarCitas;
+    public Button btnMostrarCitasOrd;
     public Button btnCerrarSesion;
     public Label lblInfoUser;
 
     public static Stage stageRegisCita;
+    public Button btnMostrarCitasCaso;
 
     @FXML
     public void initialize() {
         lblInfoUser.setText("Cargo: " + CtrlLogin.cargoEmpLogeado);
+        if (CtrlLogin.empLogeado.getCargo() == Cargo.RECEPCIONISTA) {
+            btnMostrarCitasCaso.setVisible(false);
+        }
     }
 
     public void clickBtnCerrarSesion(ActionEvent actionEvent) throws IOException {
@@ -33,9 +35,20 @@ public class CtrlInterfUser {
         btnCerrarSesion.getScene().setRoot(root);
     }
 
-    public void clickBtnMostrarCitas(ActionEvent actionEvent) throws Exception {
-        ListaPersistente<CitaOrdinaria> listaCitasOrdinarias = new ListaPersistente<>(ListaPersistente.CIT_ORD);
-        listaCitasOrdinarias.printLista();
+    public void clickBtnMostrarCitasOrd(ActionEvent actionEvent) throws Exception {
+        Stage stageViewCita = new Stage();
+        stageViewCita.setTitle("Citas Ordinarias");
+        Parent root = FXMLLoader.load(getClass().getResource("/view/ShowCitasOrd.fxml"));
+        stageViewCita.setScene(new Scene(root));
+        stageViewCita.show();
+    }
+
+    public void clickBtnMostrarCitasCaso(ActionEvent actionEvent) throws IOException {
+        Stage stageViewCita = new Stage();
+        stageViewCita.setTitle("Citas Ordinarias");
+        Parent root = FXMLLoader.load(getClass().getResource("/view/ShowCitasCaso.fxml"));
+        stageViewCita.setScene(new Scene(root));
+        stageViewCita.show();
     }
 
     public void clickBtnRegistrarCita(ActionEvent actionEvent) throws IOException {
@@ -54,4 +67,6 @@ public class CtrlInterfUser {
 
         stageRegisCita.show();
     }
+
+
 }
