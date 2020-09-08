@@ -3,7 +3,7 @@ package model;
 public class Recepcionista extends Empleado {
     ListaPersistente<CitaOrdinaria> listaCitasOrdinarias = new ListaPersistente<>(ListaPersistente.CIT_ORD);
 
-    public Recepcionista(String nombre, Integer DNI, Integer codigoEmpleado, String cargo, String pwd) {
+    public Recepcionista(String nombre, Integer DNI, Integer codigoEmpleado, Cargo cargo, String pwd) {
         super(nombre, DNI, codigoEmpleado, cargo, pwd);
     }
 

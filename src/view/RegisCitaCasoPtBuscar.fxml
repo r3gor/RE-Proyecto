@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="401.0"
+          prefWidth="690.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="controller.CtrlRegisCitaCasoPtBuscar">
+   <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="160.0" minWidth="10.0" prefWidth="160.0"/>
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="400.0" minWidth="10.0" prefWidth="331.0"/>
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="195.0" minWidth="0.0" prefWidth="95.0"/>
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints maxHeight="125.0" minHeight="10.0" prefHeight="75.0" vgrow="SOMETIMES"/>
+      <RowConstraints maxHeight="400.0" minHeight="10.0" prefHeight="238.0" vgrow="SOMETIMES"/>
+      <RowConstraints maxHeight="307.0" minHeight="0.0" prefHeight="82.0" vgrow="SOMETIMES"/>
+   </rowConstraints>
+   <Label alignment="CENTER" contentDisplay="CENTER" text="Nueva cita de caso" textAlignment="CENTER"
+          GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+      <font>
+         <Font size="18.0"/>
+      </font>
+   </Label>
+   <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0" GridPane.rowIndex="1">
+      <GridPane.margin>
+         <Insets bottom="10.0" left="10.0" right="10.0"/>
+      </GridPane.margin>
+      <Label text="DNI:"/>
+      <TextField fx:id="tfDNI" promptText="Buscar cita ordinaria"/>
+      <Button fx:id="btnBuscar" mnemonicParsing="false" onAction="#clickBtnBuscar" text="Buscar"/>
+   </VBox>
+   <VBox spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+      <padding>
+         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+      </padding>
+      <Label text="Información"/>
+      <TextArea fx:id="taInfoCliente" blendMode="DARKEN" cache="true" depthTest="DISABLE" editable="false"
+                prefHeight="200.0" prefWidth="200.0" promptText="Cliente"/>
+   </VBox>
+   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0" GridPane.columnIndex="1"
+         GridPane.rowIndex="2">
+      <Button fx:id="btnNuevaCita" mnemonicParsing="false" onAction="#clickBtnNuevaCita" text="Continuar"/>
+      <Button fx:id="btnAtras" mnemonicParsing="false" onAction="#clickBtnAtras" text="Cancelar"/>
+   </HBox>
+</GridPane>

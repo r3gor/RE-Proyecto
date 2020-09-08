@@ -10,26 +10,28 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import model.Administrador;
+import model.Cargo;
+import model.Empleado;
 
 import java.io.IOException;
 
 public class CtrlLogin {
     public ChoiceBox choiseBoxCargo;
-    public int CARGO;
+    public int idxCargo;
     public int codigo;
     public String password;
     public Button btnSiguiente;
     public TextField etCodigo;
     public PasswordField etPwd;
     public Button btnAtras;
-    static String cargoEmpLogeado;
 
-    private String CARGOS[] = {"Abogado Jefe", "Recepcionista"};
+    public static Cargo cargoEmpLogeado;
+    public static Empleado empLogeado;
 
     @FXML
     public void initialize() {
-        choiseBoxCargo.setItems(FXCollections.observableArrayList("Abogado Jefe", "Recepcionista"));
-        choiseBoxCargo.getSelectionModel().selectedIndexProperty().addListener((ov, valie, new_value) -> CARGO = new_value.intValue());
+        choiseBoxCargo.setItems(FXCollections.observableArrayList(Cargo.values())); // same order of Enum Cargo
+        choiseBoxCargo.getSelectionModel().selectedIndexProperty().addListener((ov, value, new_value) -> idxCargo = new_value.intValue());
     }
 
     public void clickBtnSgte(ActionEvent actionEvent) throws Exception {
@@ -37,9 +39,10 @@ public class CtrlLogin {
         password = etPwd.getText();
         System.out.println("Codigo: " + codigo);
         System.out.println("Pwd: " + password);
-        System.out.println("Cargo: " + CARGO);
-        if (Administrador.validLogin(codigo, password, CARGO)) {
-            cargoEmpLogeado = CARGOS[CARGO];
+        System.out.println("Cargo: " + Cargo.values()[idxCargo]);
+        if (Administrador.validLogin(codigo, password, Cargo.values()[idxCargo])) {
+            empLogeado = Administrador.getEmpLogeado();
+            cargoEmpLogeado = Cargo.values()[idxCargo];
             System.out.println("Login valido");
             Parent root = FXMLLoader.load(getClass().getResource("/view/InterfUser.fxml"));
             btnSiguiente.getScene().setRoot(root);

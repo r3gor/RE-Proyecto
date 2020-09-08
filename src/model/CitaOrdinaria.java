@@ -31,13 +31,13 @@ public class CitaOrdinaria implements Serializable {
 
     @Override
     public String toString() {
-        return "CitaOrdinaria{" +
-                "nombreCliente='" + nombreCliente + '\'' +
-                ", DNI=" + DNI +
-                ", contactoCelular='" + contactoCelular + '\'' +
-                ", fechaCita=" + fechaCita +
-                ", abogadoAsistente='" + abogadoAsistente + '\'' +
-                '}';
+        return "\t[CitaOrdinaria] " + "\n" +
+                "Nombre cliente: \t'" + nombreCliente + '\'' + "\n" +
+                "DNI: \t" + DNI + "\n" +
+                "Contacto celular: \t'" + contactoCelular + '\'' + "\n" +
+                "Fecha cita: \t" + fechaCita + "\n" +
+                "Abogado asistente: \t'" + abogadoAsistente + '\''
+                ;
     }
 
     public CitaOrdinaria(String nombreCliente, Integer DNI, String contactoCelular, Date fechaCita, String abogadoAsistente) {

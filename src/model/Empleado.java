@@ -8,7 +8,7 @@ public class Empleado implements Serializable {
     private String nombre;
     private Integer DNI;
     private Integer codigoEmpleado;
-    private String cargo;
+    private Cargo cargo;
     private String pwd;
 
     @Override
@@ -26,7 +26,7 @@ public class Empleado implements Serializable {
         return this.pwd.equals(pwd);
     }
 
-    public Empleado(String nombre, Integer DNI, Integer codigoEmpleado, String cargo, String pwd) {
+    public Empleado(String nombre, Integer DNI, Integer codigoEmpleado, Cargo cargo, String pwd) {
         this.nombre = nombre;
         this.DNI = DNI;
         this.codigoEmpleado = codigoEmpleado;
@@ -46,7 +46,7 @@ public class Empleado implements Serializable {
         return codigoEmpleado;
     }
 
-    public String getCargo() {
+    public Cargo getCargo() {
         return cargo;
     }
 
@@ -66,7 +66,7 @@ public class Empleado implements Serializable {
         this.codigoEmpleado = codigoEmpleado;
     }
 
-    public void setCargo(String cargo) {
+    public void setCargo(Cargo cargo) {
         this.cargo = cargo;
     }
 

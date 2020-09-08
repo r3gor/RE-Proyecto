@@ -17,7 +17,7 @@ public class CtrlRegisCitaOrd {
     public DatePicker dpFecha;
 
     public void clickBtnCancelar(ActionEvent actionEvent) {
-        CtrlInterfUser.stageMostrarCitas.close();
+        CtrlInterfUser.stageRegisCita.close();
     }
 
     public void clickBtnRegistrar(ActionEvent actionEvent) throws Exception {

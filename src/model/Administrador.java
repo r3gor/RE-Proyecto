@@ -3,10 +3,9 @@ package model;
 import java.util.ArrayList;
 
 public class Administrador {
-    public static final int RECEP = 1;
-    public static final int ABOG_JEF = 0;
     public static ListaPersistente<AbogadoJefe> listaAbogJefes = new ListaPersistente<>(ListaPersistente.ABO_JEF);
     public static ListaPersistente<Recepcionista> listaRecepcionistas = new ListaPersistente<>(ListaPersistente.RECEP);
+    public static Empleado empLogeado = null;
 
     public Administrador() {
     }
@@ -16,12 +15,16 @@ public class Administrador {
         return key_adm.equals(pwd);
     }
 
-    public static boolean validLogin(int cod, String pwd, int CARGO) throws Exception {
+    public static Empleado getEmpLogeado() {
+        return empLogeado;
+    }
+
+    public static boolean validLogin(int cod, String pwd, Cargo cargo) throws Exception {
         listaAbogJefes.loadLista();
-        System.out.println(":::here:::");
-        if (CARGO == ABOG_JEF) {
+        if (cargo == Cargo.ABOG_JEFE) {
             for (AbogadoJefe aj : listaAbogJefes.getLista()) {
                 if (aj.getCodigoEmpleado() == cod) {
+                    empLogeado = aj;
                     System.out.println("Codigo encontrado");
                     return aj.correctPwd(pwd);
                 }
@@ -29,10 +32,10 @@ public class Administrador {
             System.out.println("Codigo no encontrado en ABO_JEF");
             return false;
         }
-        if (CARGO == RECEP) {
-            System.out.println("Buscando Recep");
+        if (cargo == Cargo.RECEPCIONISTA) {
             for (Recepcionista r : listaRecepcionistas.getLista()) {
                 if (r.getCodigoEmpleado() == cod) {
+                    empLogeado = r;
                     return r.correctPwd(pwd);
                 }
             }
@@ -41,7 +44,7 @@ public class Administrador {
         } else {
             System.out.println("valor TYPE incorrecto");
         }
-
+        empLogeado = null;
         return false;
     }
 
@@ -65,6 +68,4 @@ public class Administrador {
         }
         return listaEmp;
     }
-
-
 }

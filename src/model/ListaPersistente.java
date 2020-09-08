@@ -28,7 +28,8 @@ public class ListaPersistente<T extends Serializable> implements Serializable {
         saveLista();
     }
 
-    public ArrayList<T> getLista() {
+    public ArrayList<T> getLista() throws Exception {
+        loadLista();
         return lista;
     }
 

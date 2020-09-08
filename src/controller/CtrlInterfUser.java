@@ -8,6 +8,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
+import model.Administrador;
+import model.Cargo;
 import model.CitaOrdinaria;
 import model.ListaPersistente;
 
@@ -19,7 +21,7 @@ public class CtrlInterfUser {
     public Button btnCerrarSesion;
     public Label lblInfoUser;
 
-    public static Stage stageMostrarCitas;
+    public static Stage stageRegisCita;
 
     @FXML
     public void initialize() {
@@ -37,10 +39,19 @@ public class CtrlInterfUser {
     }
 
     public void clickBtnRegistrarCita(ActionEvent actionEvent) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/view/RegisCitaOrd.fxml"));
-        stageMostrarCitas = new Stage();
-        stageMostrarCitas.setTitle("Crear cita ordinaria");
-        stageMostrarCitas.setScene(new Scene(root));
-        stageMostrarCitas.show();
+        stageRegisCita = new Stage();
+        stageRegisCita.setTitle("Crear cita ordinaria");
+
+        if (Administrador.getEmpLogeado().getCargo() == Cargo.RECEPCIONISTA) {
+            Parent root = FXMLLoader.load(getClass().getResource("/view/RegisCitaOrd.fxml"));
+            stageRegisCita.setScene(new Scene(root));
+
+        }
+        if (Administrador.getEmpLogeado().getCargo() == Cargo.ABOG_JEFE) {
+            Parent root = FXMLLoader.load(getClass().getResource("/view/RegisCitaCasoPtBuscar.fxml"));
+            stageRegisCita.setScene(new Scene(root));
+        }
+
+        stageRegisCita.show();
     }
 }

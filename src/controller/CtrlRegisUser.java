@@ -13,6 +13,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import model.AbogadoJefe;
 import model.Administrador;
+import model.Cargo;
 import model.Recepcionista;
 
 import java.io.IOException;
@@ -25,25 +26,26 @@ public class CtrlRegisUser {
     public ChoiceBox cbCargo;
     public Button btnRegistrar;
 
-    public Integer CARGO;
+    public int idxCargo;
     public Button btnImpRegistrados;
     public Button btnAtras;
 
     @FXML
     public void initialize() {
-        cbCargo.setItems(FXCollections.observableArrayList("Abogado Jefe", "Recepcionista"));
-        cbCargo.getSelectionModel().selectedIndexProperty().addListener((ov, valie, new_value) -> CARGO = new_value.intValue());
+        cbCargo.setItems(FXCollections.observableArrayList(Cargo.values()));
+        cbCargo.getSelectionModel().selectedIndexProperty().addListener((ov, valie, new_value) -> idxCargo = new_value.intValue());
     }
 
     public void clickBtnRegistrar(ActionEvent actionEvent) throws Exception {
-        if (CARGO == Administrador.ABOG_JEF) {
+        Cargo cargoSeleccionado = Cargo.values()[idxCargo];
+        if (cargoSeleccionado == Cargo.ABOG_JEFE) {
             Administrador.addAbogadoJefe(
-                    new AbogadoJefe(tfNombre.getText(), Integer.parseInt(tfDNI.getText()), Integer.parseInt(tfCdigo.getText()), "Abogado Jefe", pfPwd.getText())
+                    new AbogadoJefe(tfNombre.getText(), Integer.parseInt(tfDNI.getText()), Integer.parseInt(tfCdigo.getText()), cargoSeleccionado, pfPwd.getText())
             );
         }
-        if (CARGO == Administrador.RECEP) {
+        if (cargoSeleccionado == Cargo.RECEPCIONISTA) {
             Administrador.addRecepcionista(
-                    new Recepcionista(tfNombre.getText(), Integer.parseInt(tfDNI.getText()), Integer.parseInt(tfCdigo.getText()), "Recepcionista", pfPwd.getText())
+                    new Recepcionista(tfNombre.getText(), Integer.parseInt(tfDNI.getText()), Integer.parseInt(tfCdigo.getText()), cargoSeleccionado, pfPwd.getText())
             );
         }
     }
